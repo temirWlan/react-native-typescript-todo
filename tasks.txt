@@ -1,0 +1,7 @@
+- defaultProps for each component
+- add necessary styles
+- add animation
+- remove unnecessary files
+- add event handlers
+- create RESTful API on Node.js
+- add firebase
