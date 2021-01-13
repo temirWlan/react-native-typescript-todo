@@ -8,7 +8,7 @@ const TrashBasket: React.FC = () => {
 		<View style={styles.circle}>
 			<Image 
 				style={styles.img}
-				sourse={require('../../assets/icons/recycle-bin.svg')}
+				sourse={require('../../assets/img/recycle-bin.png')}
 			/>
 		</View>
 	)

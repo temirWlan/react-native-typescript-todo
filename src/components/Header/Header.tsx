@@ -10,8 +10,11 @@ const Component: React.FC = () => {
 	return (
 		<View style={styles.header}>
 			<Burger />
-			<TouchableOpacity style={styles.imgBlock}>
-				<Image source={require('../../assets/icons/search.svg')} />
+			<TouchableOpacity>
+				<Image 
+					style={styles.imgBlock}
+					source={require('../../assets/img/search.png')} 
+				/>
 			</TouchableOpacity>
 		</View>
 	)

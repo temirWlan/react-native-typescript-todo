@@ -1,28 +1,20 @@
 import { StyleSheet } from 'react-native';
 
-import { wrappper, fieldText } from '../../common/styles';
+import commonStyles from '../../common/styles';
+
+const { wrapper, fieldText } = commonStyles;
 
 const styles = StyleSheet.create({
-	formWrapper: {
-		width: 350
-	},
-	title: {
-
-	},
 	form: {
-		marginTop: 70,
-		flex: 1
+		flex: 1,
+		alignItems: 'center'
 	},
 	field: {
-		...wrappper,
+		...wrapper,
 		...fieldText,
-		flex: 1,
+		width: 340,
 		paddingHorizontal: 30,
 		paddingVertical: 23
-	},
-	placeholder: {
-		...fieldText,
-		color: rgba(255, 255, 255, 0.7)
 	},
 	textarea: {
 		marginTop: 15
@@ -31,9 +23,15 @@ const styles = StyleSheet.create({
 		marginTop: 20,
 		width: 200,
 		height: 60,
+		borderRadius: 20,
 		backgroundColor: '#eb06ff',
-		borderRadius: 20
-	}
+		paddingHorizontal: 70,
+		paddingVertical: 17
+	},
+	btnText: {
+		textAlign: 'center', 
+		...fieldText
+	},
 });
 
 export default styles;

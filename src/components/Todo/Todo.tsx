@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { ITodo } from '../../common/interfaces';
 import styles from './styles';
 
-const Todo: React.FC<ITodo> = ({ title }) => {
+const Todo: React.FC<ITodo> = ({ title, isCompleted }) => {
 	return (
 		<TouchableOpacity activeOpacity={0.7} >
 			<View style={styles.todo}>

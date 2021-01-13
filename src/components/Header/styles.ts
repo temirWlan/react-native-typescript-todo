@@ -7,9 +7,8 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	imgBlock: { 
-		borderWidth: 1, 
-		borderStyle: 'solid', 
-		borderColor: '#000'
+		width: 22,
+		height: 20
 	}
 });
 

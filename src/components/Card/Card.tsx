@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ProgressBarAndroid } from 'react-native';
 
 import { ICategoryCard } from '../../common/interfaces';
 import styles from './styles';
@@ -13,9 +13,12 @@ const Card: React.FC<ICategoryCard> = ({ category, completed, total }) => {
 			<Text style={styles.title}>
 				{category}
 			</Text>
-			<View style={styles.progressBar}>
-				<View style={styles.progressBarInner}></View>
-			</View>
+			<ProgressBarAndroid
+        styleAttr="Horizontal"
+        indeterminate={false}
+        progress={Math.round((completed / total) * 10) / 10}
+        color='#eb06ff'
+      />
 		</View>
 	)
 }
