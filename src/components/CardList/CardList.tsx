@@ -29,4 +29,14 @@ const CardList: React.FC<IProps> = ({ items }) => {
   />
 }
 
+CardList.defaultProps = {
+	items: [
+		{
+			category: 'Category',
+			completed: 1,
+			total: 10
+		}
+	]
+};
+
 export default CardList;

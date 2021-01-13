@@ -28,4 +28,13 @@ const TodoList: React.FC<IProps> = ({ items }) => {
   />
 }
 
+TodoList.defaultProps = {
+	items: [
+		{
+			title: 'Todo',
+			isCompleted: false
+		}
+	]
+};
+
 export default TodoList;

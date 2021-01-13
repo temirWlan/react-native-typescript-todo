@@ -23,4 +23,10 @@ const Card: React.FC<ICategoryCard> = ({ category, completed, total }) => {
 	)
 }
 
+Card.defaultProps = {
+	category: 'Category',
+	completed: 1,
+	total: 10
+};
+
 export default Card;

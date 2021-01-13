@@ -17,4 +17,9 @@ const Todo: React.FC<ITodo> = ({ title, isCompleted }) => {
 	)
 }
 
+Todo.defaultProps = {
+	title: 'Todo',
+	isCompleted: false
+};
+
 export default Todo;

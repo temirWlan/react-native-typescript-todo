@@ -9,11 +9,13 @@ const TodoAddForm: React.FC = () => {
 			<View style={styles.fields}>
 				<TextInput 
 					style={styles.field}
+					autoCorrect={false}
 					placeholder='Category'
 					placeholderTextColor='rgba(255, 255, 255, 0.5)'
 				/>
 				<TextInput 
 					style={{ ...styles.field, ...styles.textarea }}
+					autoCorrect={false}
 					placeholder='Description'
 					placeholderTextColor='rgba(255, 255, 255, 0.5)'
 					multiline={true}
