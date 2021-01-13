@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity, Alert } from 'react-native';
+import { NavigationScreenProp, NavigationState } from 'react-navigation';
 
 import Header from '../../components/Header';
 import CardList from '../../components/CardList';
@@ -7,10 +8,21 @@ import TodoList from '../../components/TodoList';
 import TodoAddButton from '../../components/TodoAddButton';
 
 import { ICategoryCard, ITodo } from './src/common/interfaces';
+import commonStyles from '../styles';
 import styles from './styles';
 
 
-const HomeScreen: React.FC = () => {
+interface NavigationParams {
+  text: string;
+}
+
+type Navigation = NavigationScreenProp<NavigationState, NavigationParams>;
+
+interface IProps {
+  navigation: Navigation;
+}
+
+const HomeScreen: React.FC<IProps> = ({ navigation }) => {
 	const [categoryCards, setCategoryCards] = useState<ICategoryCard[]>([
     {
       id: Math.random().toString(),
@@ -60,7 +72,7 @@ const HomeScreen: React.FC = () => {
   ]);
 
   return (
-  	<>
+  	<View style={commonStyles.wrapper}>
       <Header />
       <Text style={styles.title} numberOfLines={1}>
         What’s up, Temirlan
@@ -75,10 +87,14 @@ const HomeScreen: React.FC = () => {
         Today's tasks
       </Text>
       <TodoList items={todos} />
-      <View style={styles.btn}>
+      <TouchableOpacity 
+        style={styles.btn}
+        activeOpacity={0.7}
+        onPress={() => navigation.navigate('Form')}
+      >
         <TodoAddButton />
-      </View> 
-    </>
+      </TouchableOpacity> 
+    </View>
   )
 };
 

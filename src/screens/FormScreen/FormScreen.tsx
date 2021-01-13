@@ -1,15 +1,30 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { NavigationScreenProp, NavigationState } from 'react-navigation';
 
 import TodoAddForm from '../../components/TodoAddForm';
 
+import commonStyles from '../styles';
 import styles from './styles';
 
 
-const FormScreen: React.FC = () => {
+interface NavigationParams {
+  text: string;
+}
+
+type Navigation = NavigationScreenProp<NavigationState, NavigationParams>;
+
+interface IProps {
+  navigation: Navigation;
+}
+
+const FormScreen: React.FC = ({ navigation }) => {
 	return (
-		<>
-			<TouchableOpacity activeOpacity={0.7}>
+		<View style={commonStyles.wrapper}>
+			<TouchableOpacity 
+				activeOpacity={0.7}
+				onPress={() => navigation.navigate('Home')}
+			>
 	      <Image
 	        style={styles.img}
 	        source={require('../../assets/img/сross.png')} 
@@ -19,7 +34,7 @@ const FormScreen: React.FC = () => {
 				Add Task
 			</Text>
 	    <TodoAddForm />
-		</>
+		</View>
 	)
 };
 
