@@ -2,9 +2,10 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { NavigationScreenProp, NavigationState } from 'react-navigation';
 
+import withScreen from '../../hoc/Screen';
 import TodoAddForm from '../../components/TodoAddForm';
 
-import commonStyles from '../styles';
+import commonStyles from '../../hoc/Screen/styles';
 import styles from './styles';
 
 
@@ -18,7 +19,7 @@ interface IProps {
   navigation: Navigation;
 }
 
-const FormScreen: React.FC = ({ navigation }) => {
+const FormScreen: React.FC<IProps> = ({ navigation }) => {
 	return (
 		<View style={commonStyles.wrapper}>
 			<TouchableOpacity 

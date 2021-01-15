@@ -3,5 +3,5 @@ import FormScreen from './FormScreen';
 
 export {
 	HomeScreen,
-	FormScreen
+	FormScreen 
 };

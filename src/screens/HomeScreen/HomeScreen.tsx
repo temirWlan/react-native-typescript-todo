@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import { NavigationScreenProp, NavigationState } from 'react-navigation';
 
+import withScreen from '../../hoc/Screen';
 import Header from '../../components/Header';
 import CardList from '../../components/CardList';
 import TodoList from '../../components/TodoList';
 import TodoAddButton from '../../components/TodoAddButton';
 
 import { ICategoryCard, ITodo } from './src/common/interfaces';
-import commonStyles from '../styles';
+
+import commonStyles from '../../hoc/Screen/styles';
 import styles from './styles';
 
 

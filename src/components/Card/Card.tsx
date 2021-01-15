@@ -16,7 +16,7 @@ const Card: React.FC<ICategoryCard> = ({ category, completed, total }) => {
 			<ProgressBarAndroid
         styleAttr="Horizontal"
         indeterminate={false}
-        progress={Math.round((completed / total) * 10) / 10}
+        progress={total > 0 && Math.round((completed / total) * 10) / 10}
         color='#eb06ff'
       />
 		</View>

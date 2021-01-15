@@ -5,6 +5,10 @@ import { ITodo } from '../../common/interfaces';
 import styles from './styles';
 
 const Todo: React.FC<ITodo> = ({ title, isCompleted }) => {
+	const toggleComplete = () => {
+
+	};
+	
 	return (
 		<TouchableOpacity activeOpacity={0.7} >
 			<View style={styles.todo}>
