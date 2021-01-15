@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, TouchableOpacity, Alert } from 'react-native';
-import firestore from '@react-native-firebase/firestore';
 
-import firebase from '../../services/firebase';
 import { ITodo, ICategoryCard } from '../../common/interfaces';
 import styles from './styles';
 
@@ -21,16 +19,6 @@ const TodoAddForm: React.FC = () => {
 		isCompleted: false
 	});
 
-	const todosCollection = firestore().collection('Todos');
-
-	async function addTodo() {
-    await ref.add({
-      title: todo,
-      complete: false,
-    });
-    setTodo('');
-  }
-
 	const onAddTodo = async () => {
 		const { category, description } = formData;
 
@@ -39,7 +27,6 @@ const TodoAddForm: React.FC = () => {
 				title: description,
 				isCompleted: false
 			});
-			todosCollection.add(todo);
 
 			setTodo({ title: '', isCompleted: false });
 			setFormData({ category: '', description: '' });
@@ -85,18 +72,3 @@ const TodoAddForm: React.FC = () => {
 
 export default TodoAddForm;
 
-/*
-	const [category, setCategory] = useState<ICategoryCard>({
-		id: Math.random().toString(),
-		category: '',
-		completed: 0,
-		total: 0
-	});
-	const categoriesCollection = firestore().collection('Categories');
-	setCategory({
-		id: Math.random().toString(),
-		category,
-		completed: 0,
-		total: category.total + 1
-	});
-*/

@@ -12,7 +12,6 @@ import Firebase from '.src/services/firebase';
 
 import styles from './styles';
 
-if ()
 
 const Stack = createStackNavigator();
 const option = { 
