@@ -1,9 +1,9 @@
 import {
-	CARDS_REQUESTED,
-	CARDS_LOADED,
-	CARDS_REJECTED,
-	CardsActionTypes
-} from './cards';
+	CATEGORIES_REQUESTED,
+	CATEGORIES_LOADED,
+	CATEGORIES_REJECTED,
+	CategoryActionTypes
+} from './categories';
 
 import {
 	TODOS_REQUESTED,
@@ -13,12 +13,12 @@ import {
 } from './todos';
 
 export {
-	CARDS_REQUESTED,
-	CARDS_LOADED,
-	CARDS_REJECTED,
+	CATEGORIES_REQUESTED,
+	CATEGORIES_LOADED,
+	CATEGORIES_REJECTED,
 	TODOS_REQUESTED,
 	TODOS_LOADED,
 	TODOS_REJECTED,
-	CardsActionTypes,
+	CategoryActionTypes,
 	TodosActionTypes
 };

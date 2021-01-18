@@ -6,17 +6,17 @@ import {
 	TodosActionTypes
 } from '../types';
 
-interface IInitialState {
+interface ITodoInitialState extends IInitialState{
 	todos: ITodo[];
 }
 
-const initialState: IInitialState = {
+const initialState: ITodoInitialState = {
 	loading: true,
 	todos: [],
 	error: false
 };
 
-function todosReducer(state = initialState, action: TodosActionTypes): IInitialState {
+function todosReducer(state = initialState, action: TodosActionTypes): ITodoInitialState {
 	switch (action.type) {
 		case TODOS_REQUESTED:
 			return {

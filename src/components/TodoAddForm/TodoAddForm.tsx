@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, TouchableOpacity, Alert } from 'react-native';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
 
-import { ITodo, ICategoryCard } from '../../common/interfaces';
+import { RootState } from '../../store';
+import { todosLoaded } from '../../store/actions/todos';
+import { TodosActionTypes } from '../../store/types/todos';
+import { ITodo, ICategory } from '../../common/interfaces';
 import styles from './styles';
 
 interface IFormData {
@@ -37,14 +42,14 @@ const TodoAddForm: React.FC = () => {
 
 	return (
 		<View style={styles.form}>
-			<View style={styles.fields}>
+			<View>
 				<TextInput 
 					style={styles.field}
 					autoCorrect={false}
 					placeholder='Category'
 					placeholderTextColor='rgba(255, 255, 255, 0.5)'
 					value={formData.category}
-					onChangeText={() => setFormData({ ...formData, category: value })}
+					onChangeText={(value) => setFormData({ ...formData, category: value })}
 				/>
 				<TextInput 
 					style={{ ...styles.field, ...styles.textarea }}
@@ -54,7 +59,7 @@ const TodoAddForm: React.FC = () => {
 					multiline={true}
 					numberOfLines={2}
 					value={formData.description}
-					onChangeText={() => setFormData({ ...formData, description: value })}
+					onChangeText={(value) => setFormData({ ...formData, description: value })}
 				/>
 			</View>
 			<TouchableOpacity 
@@ -70,5 +75,25 @@ const TodoAddForm: React.FC = () => {
 	)
 }
 
-export default TodoAddForm;
+const mapStateToProps = (state: RootState) => {
+	const { todos: { loading, todos, error } } = state;
+
+	return {
+		loading,
+		todos,
+		error
+	}
+};
+
+const mapDispatchToProps = (dispatch: Dispatch<TodosActionTypes>) => ({ todosLoaded })
+
+export default connect<
+	ReturnType<typeof mapStateToProps>,
+	ReturnType<typeof mapDispatchToProps>,
+	void,
+	RootState
+>(
+	mapStateToProps, 
+	mapDispatchToProps
+)(TodoAddForm);
 

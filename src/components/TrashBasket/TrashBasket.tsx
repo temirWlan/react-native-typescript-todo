@@ -5,7 +5,7 @@ import styles from './styles';
 
 const TrashBasket: React.FC = () => {
 	return (
-		<View style={styles.circle}>
+		<View>
 			<Image 
 				style={styles.img}
 				sourse={require('../../assets/img/recycle-bin.png')}

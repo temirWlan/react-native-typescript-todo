@@ -8,7 +8,7 @@ import CardList from '../../components/CardList';
 import TodoList from '../../components/TodoList';
 import TodoAddButton from '../../components/TodoAddButton';
 
-import { ICategoryCard, ITodo } from './src/common/interfaces';
+import { ICategory, ITodo } from './src/common/interfaces';
 
 import commonStyles from '../../hoc/Screen/styles';
 import styles from './styles';
@@ -25,7 +25,7 @@ interface IProps {
 }
 
 const HomeScreen: React.FC<IProps> = ({ navigation }) => {
-	const [categoryCards, setCategoryCards] = useState<ICategoryCard[]>([
+	const [categoryCards, setCategoryCards] = useState<ICategory[]>([
     {
       id: Math.random().toString(),
       category: 'Business', 

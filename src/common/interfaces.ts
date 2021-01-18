@@ -1,5 +1,5 @@
 export interface IListItem {
-	id: string;
+	id?: string;
 }
 
 export interface ITodo extends IListItem {
@@ -7,7 +7,7 @@ export interface ITodo extends IListItem {
 	isCompleted: boolean;
 }
 
-export interface ICategoryCard extends IListItem {
+export interface ICategory extends IListItem {
 	category: string;
 	completed: number;
 	total: number;

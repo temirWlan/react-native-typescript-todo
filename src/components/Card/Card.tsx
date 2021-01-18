@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, ProgressBarAndroid } from 'react-native';
 
-import { ICategoryCard } from '../../common/interfaces';
+import { ICategory } from '../../common/interfaces';
 import styles from './styles';
 
-const Card: React.FC<ICategoryCard> = ({ category, completed, total }) => {
+const Card: React.FC<ICategory> = ({ category, completed, total }) => {
 	return (
 		<View style={styles.card}>
 			<Text style={styles.description}>

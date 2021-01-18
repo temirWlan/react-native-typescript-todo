@@ -3,11 +3,11 @@ import { View, FlatList } from 'react-native';
 
 import Card from '../Card';
 
-import { ICategoryCard } from '../../common/interfaces';
+import { ICategory } from '../../common/interfaces';
 import styles from './styles';
 
 interface IProps {
-	items: ICategoryCard[];
+	items: ICategory[];
 }
 
 const CardList: React.FC<IProps> = ({ items }) => {

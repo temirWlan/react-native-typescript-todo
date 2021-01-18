@@ -1,30 +1,30 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { NavigationScreenProp, NavigationState } from 'react-navigation';
+import { withNavigation  } from 'react-navigation';
 
-import withScreen from '../../hoc/Screen';
+// import withScreen from '../../hoc/Screen';
 import TodoAddForm from '../../components/TodoAddForm';
 
 import commonStyles from '../../hoc/Screen/styles';
 import styles from './styles';
 
 
-interface NavigationParams {
-  text: string;
-}
+// interface NavigationParams {
+//   text: string;
+// }
 
-type Navigation = NavigationScreenProp<NavigationState, NavigationParams>;
+// type Navigation = NavigationScreenProp<NavigationState, NavigationParams>;
 
-interface IProps {
-  navigation: Navigation;
-}
+// interface IProps {
+//   navigation: Navigation;
+// }
 
-const FormScreen: React.FC<IProps> = ({ navigation }) => {
+const FormScreen: React.FC = (props) => {
 	return (
 		<View style={commonStyles.wrapper}>
 			<TouchableOpacity 
 				activeOpacity={0.7}
-				onPress={() => navigation.navigate('Home')}
+				onPress={() => props.navigation.navigate('Home')}
 			>
 	      <Image
 	        style={styles.img}
@@ -39,4 +39,4 @@ const FormScreen: React.FC<IProps> = ({ navigation }) => {
 	)
 };
 
-export default FormScreen;
+export default withNavigation(FormScreen);

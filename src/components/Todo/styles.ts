@@ -17,8 +17,11 @@ const styles = StyleSheet.create({
 	circle: {
 		width: 30,
 		height: 30,
-		backgroundColor: '#eb06ff',
-		borderRadius: 30 / 2
+		backgroundColor: 'transparent',
+		borderRadius: 30 / 2,
+		borderWidth: 1,
+		borderStyle: 'solid',
+		borderColor: '#eb06ff'
 	},
 	title: {
 		...fieldText,
